@@ -1,5 +1,9 @@
 import AnimatedBackground from "../../components/AnimatedBackground"
 import turazzvelunk_welcomepage from "../../assets/turazzvelunk_welcomepage.png"
+import egrenyilo_welcomepage from "../../assets/egrenyilo_welcomepage.png"
+import loophub_loops from "../../assets/loophub_loops.png"
+import hecarfest_welcomepage from "../../assets/hecarfest_welcomepage.png"
+import spendfox_web_subscriptions from "../../assets/spendfox_web_subscriptions.png"
 
 const ProjectsScreen = () => {
 
@@ -9,31 +13,43 @@ const ProjectsScreen = () => {
       description: "Egy túraútvonalakat bemutató weboldal, ahol a felhasználók felfedezhetik a legszebb túraútvonalakat, és megoszthatják saját tapasztalataikat.",
       image: turazzvelunk_welcomepage,
       link: "https://turazzvelunk.vercel.app/",
-      technologies: ["React", "Firebase", "Tailwind CSS"],
+      github: "https://github.com/zoltannyiri/turazzvelunk",
+      technologies: ["React", "MySQL", "Tailwind CSS", "Node.js", "Express.js", "Socket.io"],
     },
 
     {
       title: "SpendFox",
       description: "Teszt szöveg",
-      image: turazzvelunk_welcomepage,
+      image: spendfox_web_subscriptions,
       link: "https://spendfox.vercel.app/",
-      technologies: ["React", "Firebase", "Tailwind CSS"],
+      github: "https://github.com/zoltannyiri/SpendFox",
+      technologies: ["React", "React Native", "Node.js", "Express.js", "Firebase", "Socket.io", "Tailwind CSS"],
     },
 
     {
       title: "Égre Nyíló",
       description: "Teszt szöveg",
-      image: turazzvelunk_welcomepage,
+      image: egrenyilo_welcomepage,
       link: "https://egrenyilo.hu/",
-      technologies: ["React", "Firebase", "Tailwind CSS"],
+      github: "https://github.com/zoltannyiri/Egre_Nyilo",
+      technologies: ["Angular", "Node.js", "SCSS"],
     },
 
     {
       title: "Loophub",
       description: "Teszt szöveg",
-      image: turazzvelunk_welcomepage,
+      image: loophub_loops,
       link: "https://loop-hub.vercel.app/",
-      technologies: ["React", "Firebase", "Tailwind CSS"],
+      github: "https://github.com/zoltannyiri/LoopHub",
+      technologies: ["Angular", "MongoDB", "Node.js", "Express.js", "Socket.io", "Tailwind CSS"],
+    },
+
+    {
+      title: "HéCarFest",
+      description: "Teszt szöveg",
+      image: hecarfest_welcomepage,
+      github: "https://github.com/zoltannyiri/hecarfest.hu_new",
+      technologies: ["Angular", "MongoDB", "Node.js", "Express.js", "Tailwind CSS"],
     }
   ]
 
@@ -110,13 +126,19 @@ const ProjectsScreen = () => {
               </div>
 
               <div className="mt-6 flex gap-4">
-                <button className="cursor-pointer rounded-lg bg-teal-400 px-4 py-2 font-semibold text-[#071014] transition hover:bg-teal-300">
+                {project.link ? (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer rounded-lg bg-teal-400 px-4 py-2 font-semibold text-[#071014] transition hover:bg-teal-300">
                   Megtekintés
-                </button>
-
-                <button className="cursor-pointer rounded-lg border border-white/10 px-4 py-2 text-gray-300 transition hover:bg-white/5">
+                </a>
+                ) : (
+                  <span disabled className="cursor-not-allowed rounded-lg bg-teal-600/30 px-4 py-2 font-semibold text-gray-500">
+                    Nem elérhető
+                  </span>
+                )}
+                
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="cursor-pointer rounded-lg border border-white/10 px-4 py-2 text-gray-300 transition hover:bg-white/5">
                   GitHub
-                </button>
+                </a>
               </div>
             </div>
           </div>
