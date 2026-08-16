@@ -64,7 +64,7 @@ const ProjectsScreen = () => {
   }
 
   return (
-    <div className="relative min-h-screen pt-24 md:pt-50">
+    <div className="relative min-h-screen pt-24 md:pt-40">
       <AnimatedBackground />
       <div className="flex flex-col items-center justify-center *:mx-auto mx-auto max-w-7xl text-center">
         <div className=" text-teal-400 text-6xl font-bold">
@@ -97,14 +97,7 @@ const ProjectsScreen = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="
-                  h-[260px]
-                  w-full
-                  object-cover
-                  transition-transform
-                  duration-500
-                  group-hover:scale-[1.03]
-                "
+                className=" h-[260px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] "
               />
             </div>
 
