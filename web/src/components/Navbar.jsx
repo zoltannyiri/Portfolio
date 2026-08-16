@@ -8,11 +8,11 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <a href="#home" className="rounded-xl bg-white/5 px-4 py-2 text-sm font-medium text-teal-400  hover:bg-[#3fb8a4]/10 hover:text-teal-400 hover:scale-110" >
+          <a href="/home" className="rounded-xl bg-white/5 px-4 py-2 text-sm font-medium text-teal-400  hover:bg-[#3fb8a4]/10 hover:text-teal-400 hover:scale-110" >
             Főoldal
           </a>
 
-          <a href="#about" className="group rounded-xl px-4 py-2 text-sm font-medium text-gray-400 transition-colors hover:bg-[#3fb8a4]/10 hover:text-teal-400 hover:scale-110">
+          <a href="/projects" className="group rounded-xl px-4 py-2 text-sm font-medium text-gray-400 transition-colors hover:bg-[#3fb8a4]/10 hover:text-teal-400 hover:scale-110">
             <span className="inline-block origin-center transition-transform duration-200">
               Munkáim
             </span>
