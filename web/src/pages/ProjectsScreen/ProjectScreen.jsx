@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import AnimatedBackground from "../../components/AnimatedBackground"
 import turazzvelunk_welcomepage from "../../assets/turazzvelunk_welcomepage.png"
 import egrenyilo_welcomepage from "../../assets/egrenyilo_welcomepage.png"
@@ -6,6 +8,7 @@ import hecarfest_welcomepage from "../../assets/hecarfest_welcomepage.png"
 import spendfox_web_subscriptions from "../../assets/spendfox_web_subscriptions.png"
 
 const ProjectsScreen = () => {
+  const [expandedProjects, setExpandedProjects] = useState({})
 
   const projects = [
     {
@@ -52,6 +55,13 @@ const ProjectsScreen = () => {
       technologies: ["Angular", "MongoDB", "Node.js", "Express.js", "Tailwind CSS"],
     }
   ]
+
+  const toggleTechnologies = (title) => {
+    setExpandedProjects((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }))
+  }
 
   return (
     <div className="relative min-h-screen pt-24 md:pt-50">
@@ -108,7 +118,10 @@ const ProjectsScreen = () => {
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
-                {project.technologies.map((technology) => (
+                {(expandedProjects[project.title]
+                  ? project.technologies
+                  : project.technologies.slice(0, 4)
+                ).map((technology) => (
                   <span
                     key={technology}
                     className="
@@ -123,6 +136,28 @@ const ProjectsScreen = () => {
                     {technology}
                   </span>
                 ))}
+                {project.technologies.length > 4 && (
+                  <button
+                    onClick={() => toggleTechnologies(project.title)}
+                    className="
+                      cursor-pointer
+                      rounded-lg
+                      border border-white/10
+                      bg-white/5
+                      px-3 py-1
+                      text-sm
+                      text-gray-400
+                      transition
+                      hover:border-teal-400/30
+                      hover:bg-teal-400/10
+                      hover:text-teal-300
+                    "
+                  >
+                    {expandedProjects[project.title]
+                      ? "Kevesebb"
+                      : `+${project.technologies.length - 4} további`}
+                  </button>
+                )}
               </div>
 
               <div className="mt-6 flex gap-4">
