@@ -14,7 +14,7 @@ const Navbar = () => {
       <nav className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0d141d]/60 px-5 py-3 shadow-lg backdrop-blur-md">
 
         <NavLink to="/home" className="cursor-pointer text-xl font-bold tracking-wide text-teal-400">
-          NZ
+          Nyiri Zoltán
         </NavLink>
 
         <div className="flex items-center gap-2">
