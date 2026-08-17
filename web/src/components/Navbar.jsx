@@ -11,7 +11,7 @@ const Navbar = () => {
     
   return (
     <header className="fixed top-4 left-1/2 z-50 w-[60%] -translate-x-1/2">
-      <nav className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#0d141d]/60 px-5 py-3 shadow-lg backdrop-blur-md">
+      <nav className="flex items-center justify-between rounded-2xl border border-white/3 bg-[#0d141d]/60 px-5 py-3 shadow-lg backdrop-blur-md">
 
         <NavLink to="/home" className="cursor-pointer text-xl font-bold tracking-wide text-teal-400">
           Nyiri Zoltán
