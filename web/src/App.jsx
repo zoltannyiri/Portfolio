@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css'
 
 import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 import HomeScreen from './pages/HomeScreen/HomeScreen'
 import ProjectsScreen from './pages/ProjectsScreen/ProjectScreen'
 import ContactScreen from './pages/ContactScreen/ContactScreen'
@@ -11,6 +12,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <Sidebar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomeScreen />} />
