@@ -116,10 +116,10 @@ const HomeScreen = () => {
 
                   
             <div className="flex items-center justify-center px-6 py-4 gap-5 text-xl">
-              <button className="cursor-pointer mt-10 rounded-xl bg-teal-400 px-6 py-3 font-semibold text-[#0d141d] transition-all duration-200 hover:bg-teal-300 hover:scale-105">
+              <button onClick={() => window.location.href = '/projects'} className="cursor-pointer mt-10 rounded-xl bg-teal-400 px-6 py-3 font-semibold text-[#0d141d] transition-all duration-200 hover:bg-teal-300 hover:scale-105">
                 Munkáim
               </button>
-              <button className="cursor-pointer mt-10 border border-gray-800 rounded-xl bg-[#070b14] px-6 py-3 font-semibold text-[#e9edf3] transition-all duration-200 hover:bg-gray-800 hover:scale-105">
+              <button onClick={() => window.location.href = '/contact'} className="cursor-pointer mt-10 border border-gray-800 rounded-xl bg-[#070b14] px-6 py-3 font-semibold text-[#e9edf3] transition-all duration-200 hover:bg-gray-800 hover:scale-105">
                 Kapcsolatfelvétel
               </button>
             </div>
