@@ -30,11 +30,11 @@ const Navbar = () => {
             Munkáim
           </NavLink>
 
-          <NavLink to="/experience" className={navClass}>
-            Tapasztalat
+          <NavLink to="/resume" className={navClass}>
+            Önéletrajz
           </NavLink>
 
-          <NavLink to="/pricing" className={navClass}>
+          <NavLink to="/prices" className={navClass}>
             Árak
           </NavLink>
 

@@ -8,6 +8,7 @@ import HomeScreen from './pages/HomeScreen/HomeScreen'
 import ProjectsScreen from './pages/ProjectsScreen/ProjectScreen'
 import ContactScreen from './pages/ContactScreen/ContactScreen'
 import AboutScreen from './pages/AboutScreen/AboutScreen'
+import ResumeScreen from './pages/PricesScreen/ResumeScreen'
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/about" element={<AboutScreen />} />
         <Route path="/projects" element={<ProjectsScreen />} />
         <Route path="/contact" element={<ContactScreen />} />
+        <Route path="/resume" element={<ResumeScreen />} />
+        {/* <Route path="/prices" element={<PricesScreen />} /> */}
         {/* <Route path="/about" element={<h1>About Page</h1>} />
         <Route path="/contact" element={<h1>Contact Page</h1>} /> */}
       </Routes>
