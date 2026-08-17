@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
+import { Analytics } from "@vercel/analytics/react"
 
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
@@ -22,6 +23,7 @@ function App() {
         {/* <Route path="/about" element={<h1>About Page</h1>} />
         <Route path="/contact" element={<h1>Contact Page</h1>} /> */}
       </Routes>
+      <Analytics />
     </Router>
   )
 }
