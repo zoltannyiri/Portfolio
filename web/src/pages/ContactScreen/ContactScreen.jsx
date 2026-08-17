@@ -16,6 +16,27 @@ const ContactScreen = () => {
     setIsSubmitting(true)
   }
 
+  const emailSender = async () => {
+    try {
+      const response = await fetch(import.meta.env.VITE_API_URL + '/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName,
+          emailAddress,
+          subject,
+          message,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  };
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#080d15] pt-24 md:pt-40">
       {/* <AnimatedBackground /> */}
@@ -108,7 +129,7 @@ const ContactScreen = () => {
                 className="mt-2 w-full rounded-lg border border-gray-900 bg-[#070b14] px-4 py-2 text-white placeholder-gray-400 focus:border-teal-400 focus:ring focus:ring-teal-400/20"
               />
             </div>
-            <a 
+            <a onClick={emailSender}
               className="min-w-full mt-8 inline-block rounded-lg text-sm font-bold bg-teal-500 px-4 py-3 text-center text-black hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
             >
               <FiSend className="inline mr-2" />
