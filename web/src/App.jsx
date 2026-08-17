@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import HomeScreen from './pages/HomeScreen/HomeScreen'
 import ProjectsScreen from './pages/ProjectsScreen/ProjectScreen'
 import ContactScreen from './pages/ContactScreen/ContactScreen'
+import AboutScreen from './pages/AboutScreen/AboutScreen'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomeScreen />} />
+        <Route path="/about" element={<AboutScreen />} />
         <Route path="/projects" element={<ProjectsScreen />} />
         <Route path="/contact" element={<ContactScreen />} />
         {/* <Route path="/about" element={<h1>About Page</h1>} />

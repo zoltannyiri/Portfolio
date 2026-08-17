@@ -22,6 +22,10 @@ const Navbar = () => {
             Főoldal
           </NavLink>
 
+          <NavLink to="/about" className={navClass}>
+            Rólam
+          </NavLink>
+
           <NavLink to="/projects" className={navClass}>
             Munkáim
           </NavLink>

@@ -130,7 +130,7 @@ const ContactScreen = () => {
               />
             </div>
             <a onClick={emailSender}
-              className="min-w-full mt-8 inline-block rounded-lg text-sm font-bold bg-teal-500 px-4 py-3 text-center text-black hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
+              className="cursor-pointer min-w-full mt-8 inline-block rounded-lg text-sm font-bold bg-teal-500 px-4 py-3 text-center text-black hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
             >
               <FiSend className="inline mr-2" />
               Email küldése
