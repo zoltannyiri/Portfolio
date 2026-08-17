@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+import ScrollReveal from "../../components/ScrollReveal"
 import AnimatedBackground from "../../components/AnimatedBackground"
 import turazzvelunk_welcomepage from "../../assets/turazzvelunk_welcomepage.png"
 import egrenyilo_welcomepage from "../../assets/egrenyilo_welcomepage.png"
@@ -76,23 +77,15 @@ const ProjectsScreen = () => {
         </div>
       </div>
       <div className="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-6 px-6 md:grid-cols-2">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
+          <ScrollReveal
+            key={project.title}
+            direction="up"
+            delay={index * 100}
+          >
           <div
             key={project.title}
-            className="
-              group
-              overflow-hidden
-              rounded-2xl
-              border border-white/10
-              bg-[#0d141d]/70
-              backdrop-blur-md
-              transition-all
-              duration-300
-              hover:-translate-y-1
-              hover:border-teal-400/40
-              hover:shadow-[0_15px_50px_rgba(45,212,191,0.10)]
-            "
-          >
+            className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0d141d]/70 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-[0_15px_50px_rgba(45,212,191,0.10)]">
             <div className="overflow-hidden">
               <img
                 src={project.image}
@@ -170,6 +163,7 @@ const ProjectsScreen = () => {
               </div>
             </div>
           </div>
+          </ScrollReveal>
         ))}
       </div>
     </div>

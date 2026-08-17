@@ -1,8 +1,96 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 
 import AnimatedBackground from "../../components/AnimatedBackground"
 
+const TimelineItem = ({ item, index }) => {
+  const ref = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div
+      ref={ref}
+      className={`
+        relative
+        grid
+        grid-cols-[1fr_80px_1fr]
+        items-start
+        transition-all
+        duration-700
+        ease-out
+        ${
+          isVisible
+            ? "translate-x-0 opacity-100"
+            : index % 2 === 0
+              ? "-translate-x-10 opacity-0"
+              : "translate-x-10 opacity-0"
+        }
+      `}
+    >
+      <div className={index % 2 === 0 ? "col-start-1" : "col-start-3"}>
+        <div className="rounded-2xl border border-white/10 bg-[#0d141d]/70 p-6 backdrop-blur-md">
+          <h3 className="text-xl font-bold text-white">
+            {item.title}
+          </h3>
+
+          <p className="mt-1 text-teal-400">
+            {item.company}
+          </p>
+
+          <p className="mt-2 text-sm text-gray-400">
+            {item.period}
+          </p>
+
+          {item.description && (
+            Array.isArray(item.description) ? (
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-300">
+                {item.description.map((text, i) => (
+                  <li key={i}>{text}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="mt-4 text-gray-300">
+                {item.description}
+              </p>
+            )
+          )}
+        </div>
+      </div>
+
+      <div className={` absolute left-1/2 top-8 -translate-x-1/2 transition-all duration-700
+          ${
+            isVisible
+              ? "scale-100 opacity-100"
+              : "scale-50 opacity-0"
+          }
+        `}
+      >
+        <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#080d15]">
+          <div className="h-2.5 w-2.5 rounded-full bg-teal-400 shadow-[0_0_0_4px_rgba(45,212,191,0.12)]" />
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const ResumeScreen = () => {
   const [activeTab, setActiveTab] = useState("vegzettsegek")
@@ -177,53 +265,16 @@ const ResumeScreen = () => {
           ))}
         </div>
       </div>
-      <div className="relative z-10 mt-14 pl-10">
+      <div className="relative z-10 mt-14 pl-0">
         <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/10" />
 
         <div className="space-y-10">
           {data[activeTab].map((item, index) => (
-            <div
-              key={index}
-              className="relative grid grid-cols-[1fr_80px_1fr] items-start"
-            >
-              <div className={index % 2 === 0 ? "col-start-1" : "col-start-3"}>
-                <div className="rounded-2xl border border-white/10 bg-[#0d141d]/70 p-6 backdrop-blur-md">
-                  <h3 className="text-xl font-bold text-white">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-1 text-teal-400">
-                    {item.company}
-                  </p>
-
-                  <p className="mt-2 text-sm text-gray-400">
-                    {item.period}
-                  </p>
-
-                  {item.description && (
-                    Array.isArray(item.description) ? (
-                      <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-300">
-                        {item.description.map((text, index) => (
-                          <li key={index}>
-                            {text}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="mt-4 text-gray-300">
-                        {item.description}
-                      </p>
-                    )
-                  )}
-                </div>
-              </div>
-
-              <div className="absolute left-1/2 top-8 -translate-x-1/2">
-                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#080d15]">
-                  <div className="h-2.5 w-2.5 rounded-full bg-teal-400 shadow-[0_0_0_4px_rgba(45,212,191,0.12)]" />
-                </div>
-              </div>
-            </div>
+            <TimelineItem
+              key={`${activeTab}-${index}`}
+              item={item}
+              index={index}
+            />
           ))}
         </div>
       </div>

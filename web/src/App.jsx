@@ -8,7 +8,7 @@ import HomeScreen from './pages/HomeScreen/HomeScreen'
 import ProjectsScreen from './pages/ProjectsScreen/ProjectScreen'
 import ContactScreen from './pages/ContactScreen/ContactScreen'
 import AboutScreen from './pages/AboutScreen/AboutScreen'
-import ResumeScreen from './pages/PricesScreen/ResumeScreen'
+import ResumeScreen from './pages/ResumeScreen/ResumeScreen'
 
 function App() {
   return (

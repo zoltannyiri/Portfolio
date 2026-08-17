@@ -5,7 +5,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { IoOpenOutline } from "react-icons/io5";
 import mernokinfo_szakdolgozat from "../../assets/mernokinfo_szakdolgozat.pdf"
 
-
+import ScrollReveal from "../../components/ScrollReveal"
 
 const AboutScreen = () => {
   return (
@@ -14,6 +14,7 @@ const AboutScreen = () => {
        <div>
           <div className="mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 items-center justify-center max-w-7xl">
             <div className="grid-cols-1">
+              <ScrollReveal direction="left">
               <div className="text-white text-base space-y-5 tracking-widest leading-loose">
                 Üdvözöllek! Nyiri Zoltán vagyok, webfejlesztő és mobil alkalmazás fejlesztő. Szenvedélyem a technológia és az innováció, 
                 és mindig arra törekszem, hogy a legjobb megoldásokat nyújtsam ügyfeleimnek. <b></b>
@@ -23,13 +24,13 @@ const AboutScreen = () => {
                 gyakorlati tapasztalatok megszerzése érdekében számos projektben vettem részt, amelyek során lehetőségem nyílt a valós problémák megoldására 
                 és az ügyfélközpontú megközelítésre. 
               </div>
-
+              </ScrollReveal>
             </div>
             <div className="grid-cols-2">
               {/* <div className="text-white text-xl">
                 Üdvözöllek!
               </div> */}
-
+              <ScrollReveal direction="right">
               <div className="border rounded-2xl border-teal-400/20 p-4 min-w-full py-7">
                 <div className="flex  gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal-400/10">
@@ -65,6 +66,7 @@ const AboutScreen = () => {
                   </div>
                 </div>
               </div>
+              </ScrollReveal>
 
             </div>
           </div>

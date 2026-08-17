@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 
 import AnimatedBackground from "../../components/AnimatedBackground"
 import teszt1 from "../../assets/teszt1.JPG"
+import ScrollReveal from "../../components/ScrollReveal"
 
 
 const HomeScreen = () => {
@@ -80,6 +81,7 @@ const HomeScreen = () => {
           </div>
         </div> */}
         <div className="grid grid-cols-1 gap-0 md:grid-cols-2 text-slate-400 max-w-7xl mx-auto *:mx-auto">
+          <ScrollReveal direction="left">
           <div className="relative flex items-center justify-center">
             <div className="absolute -bottom-8 -right-8 h-72 w-72 rounded-full bg-teal-400/10 blur-3xl" />
 
@@ -93,7 +95,8 @@ const HomeScreen = () => {
               </div>
             </div>
           </div>
-
+          </ScrollReveal>
+          <ScrollReveal direction="right" delay={150}>
           <div className="flex flex-col justify-center gap-y-5 text-center font-[Sora]">
             <div className="text-2xl gap-y-5 flex flex-col">
               <div>
@@ -124,6 +127,7 @@ const HomeScreen = () => {
               </button>
             </div>
           </div>
+          </ScrollReveal>
         </div>
       </div>
       {/* <div className="flex items-center justify-center px-6 py-4 gap-5">
