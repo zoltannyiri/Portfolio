@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "backend/**"
+      - ".github/workflows/deploy-backend.yml"
 
 jobs:
   deploy:
@@ -19,8 +20,11 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/Portfolio
+            cd /root/Portfolio
             git pull origin main
+
             cd backend
             npm ci
+
             pm2 restart portfolio-backend
+            pm2 save
