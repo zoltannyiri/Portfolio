@@ -182,7 +182,7 @@ const PricesScreen = () => {
 
             <div className="border-t border-white/10 p-6 md:border-t-0 text-center">
               <div className="text-sm text-gray-500">
-                Projekdíj
+                Projektdíj
               </div>
 
               <div className="mt-2 text-2xl font-bold text-white">
