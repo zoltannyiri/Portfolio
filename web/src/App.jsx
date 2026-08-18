@@ -17,6 +17,7 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomeScreen />} />
         <Route path="/about" element={<AboutScreen />} />
         <Route path="/projects" element={<ProjectsScreen />} />
