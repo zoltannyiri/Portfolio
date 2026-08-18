@@ -35,7 +35,7 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink to="/prices" className={navClass}>
-            Árak
+            Együttműködés
           </NavLink>
 
           <NavLink to="/contact" className={navClass}>
