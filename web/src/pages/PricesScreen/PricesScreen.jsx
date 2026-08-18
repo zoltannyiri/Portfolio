@@ -25,13 +25,8 @@ const ProcessItem = ({ item, index }) => {
   }, [])
 
   return (
-    <div
-      ref={ref}
-      className={`
-        relative
-        transition-all
-        duration-700
-        ease-out
+    <div ref={ref}
+      className={` relative transition-all duration-700 ease-out
         ${
           isVisible
             ? "translate-y-0 opacity-100"
@@ -86,9 +81,9 @@ const PricesScreen = () => {
       {
         title: "Konzultáció",
         price: "Ingyenes",
-        time: "30 perc",
+        time: "30 perc - 60 perc",
         description: [
-          "Az együttműködés első lépéseként részletesen átbeszéljük az elképzeléseidet, igényeidet és a céljaidat, hogy pontosan megértsük, mire van szükséged.",
+          "Az együttműködés első lépéseként részletesen átbeszéljük az elképzeléseidet, igényeidet és a céljaidat, hogy pontosan megértsem, mire van szükséged.",
           "Felállítok egy ütemtervet a projekt megvalósításához, és meghatározom a mérföldköveket, hogy nyomon követhesd a haladást."
         ]
       },
@@ -146,9 +141,80 @@ const PricesScreen = () => {
     <div className="mx-auto max-w-4xl px-6 py-12">
       <AnimatedBackground />
       <div className="relative z-10 mt-14 pl-0">
-        <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/10" />
+        <div className="mt-30 flex flex-col items-center justify-center text-center">
+          <div className="text-4xl font-bold text-teal-400">
+            Együttműködés
+          </div>
+          <div className="text-gray-400 text-xl mt-10 leading-8 space-y-5">
+            <div>
+              Lehetőség van <strong className="text-teal-400">óradíj</strong> alapú, vagy <strong className="text-teal-400">projekt szintű</strong> együttműködésre. 
+            </div>
 
-        <div className="space-y-10">
+            {/* <div className="mt-7">
+              A projekt szintű együttműködés esetén az ár a projekt specifikációja és összetettsége alapján kerül meghatározásra.
+            </div> */}
+          </div>
+        </div>
+        <div className="mt-16 rounded-2xl border border-white/10 bg-[#0d141d]/70 backdrop-blur-md">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr]">
+
+            <div className="p-6 text-center">
+              <div className="text-sm text-gray-500 items-center">
+                Óradíj
+              </div>
+
+              <div className="mt-2 text-2xl font-bold text-teal-400">
+                6 990 Ft / óra
+              </div>
+              <li>
+                <p className="mt-2 text-sm leading-6 text-gray-400">
+                  {/* Kisebb módosítások, hibajavítások és egyedi fejlesztési feladatok esetén. */}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-gray-400">
+                  Az óradíjas együttműködés megkezdésekor a várható feladat alapján meghatározok egy becsült munkaidőt. 
+                  A munka indulásához egy előre egyeztetett, például 5 vagy 10 órás kezdő keret előlegként fizetendő. 
+                  A további munka az elvégzett órák alapján kerül elszámolásra.
+                </p>
+              </li>
+            </div>
+
+            <div className="hidden bg-white/10 md:block" />
+
+            <div className="border-t border-white/10 p-6 md:border-t-0 text-center">
+              <div className="text-sm text-gray-500">
+                Projekdíj
+              </div>
+
+              <div className="mt-2 text-2xl font-bold text-white">
+                Egyedi árajánlat
+              </div>
+
+              <p className="mt-2 text-sm leading-6 text-gray-400">
+                Amennyiben a projektdíj alapú együttműködést választod,
+                a projekt összetettségétől és specifikációitől függően adok egy árajánlatot, melynek 20%-a a tervezési fázisban előlegként fizetendő.
+                Amennyiben a fejlesztési folyamat alatt egyéb, előre nem egyeztetett funkciókat szeretnél a projektedbe, többletköltséggel járhat.
+              </p>
+            </div>
+          </div>
+
+          {/* <div className="rounded-2xl border border-white/10 bg-[#0d141d]/70 p-5 backdrop-blur-md">
+            <div className="text-sm text-gray-500">
+              Fizetés
+            </div>
+
+            <div className="mt-2 text-2xl font-bold text-white">
+              Mérföldkövek szerint
+            </div>
+
+            <p className="mt-2 text-sm leading-6 text-gray-400">
+              A fizetés a projekt előrehaladásához igazodik, így nem szükséges
+              a teljes összeget előre kifizetni.
+            </p>
+          </div> */}
+        </div>
+        <div className="mt-10 absolute left-1/2 h-full w-px -translate-x-1/2 bg-white/10" />
+
+        <div className="space-y-10 mt-10">
           {data.munkafolyamat.map((item, index) => (
             <ProcessItem
               key={`${index}`}
