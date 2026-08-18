@@ -13,7 +13,7 @@ const HomeScreen = () => {
   const texts = [
     "Webfejlesztő",
     "Applikáció fejlesztő",
-    "Magántanár",
+    // "Magántanár",
     "Alkalmazás fejlesztő",
   ]
 
