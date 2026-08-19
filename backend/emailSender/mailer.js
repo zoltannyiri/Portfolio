@@ -10,7 +10,9 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS
-    }
+    },
+    logger: true,
+    transactionLog: true
 });
 
 const defaultFrom = process.env.EMAIL_FROM || 'Turazz Velunk <no-reply@turazzvelunk.local>';
