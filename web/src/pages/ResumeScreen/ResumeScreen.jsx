@@ -32,7 +32,8 @@ const TimelineItem = ({ item, index }) => {
       className={`
         relative
         grid
-        grid-cols-[1fr_80px_1fr]
+        grid-cols-[24px_minmax(0,1fr)]
+        md:grid-cols-[1fr_80px_1fr]
         items-start
         transition-all
         duration-700
@@ -41,13 +42,13 @@ const TimelineItem = ({ item, index }) => {
           isVisible
             ? "translate-x-0 opacity-100"
             : index % 2 === 0
-              ? "-translate-x-10 opacity-0"
-              : "translate-x-10 opacity-0"
+              ? "translate-y-8 opacity-0 md:translate-y-0 md:-translate-x-10"
+              : "translate-y-8 opacity-0 md:translate-y-0 md:translate-x-10"
         }
       `}
     >
-      <div className={index % 2 === 0 ? "col-start-1" : "col-start-3"}>
-        <div className="rounded-2xl border border-white/10 bg-[#0d141d]/70 p-6 backdrop-blur-md">
+      <div className={`col-start-2 min-w-0 ${index % 2 === 0 ? "md:col-start-1" : "md:col-start-3"}`}>
+        <div className="rounded-2xl border border-white/10 bg-[#0d141d]/70 p-4 backdrop-blur-md sm:p-6">
           <h3 className="text-xl font-bold text-white">
             {item.title}
           </h3>
@@ -76,7 +77,7 @@ const TimelineItem = ({ item, index }) => {
         </div>
       </div>
 
-      <div className={` absolute left-1/2 top-8 -translate-x-1/2 transition-all duration-700
+      <div className={` absolute left-3 top-8 -translate-x-1/2 transition-all duration-700 md:left-1/2
           ${
             isVisible
               ? "scale-100 opacity-100"
@@ -246,15 +247,15 @@ const ResumeScreen = () => {
   }
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-12">
+    <div className="mx-auto max-w-4xl px-4 pb-12 pt-24 sm:px-6 sm:pt-28">
       <AnimatedBackground />
-      <div className="relative z-10 mt-20 flex justify-center">
-        <div className="flex flex-wrap justify-center gap-2 rounded-2xl border border-white/10 bg-[#0d141d]/70 p-2 backdrop-blur-md">
+      <div className="relative z-10 flex justify-center sm:mt-4">
+        <div className="grid w-full grid-cols-1 gap-2 rounded-2xl border border-white/10 bg-[#0d141d]/70 p-2 backdrop-blur-md min-[430px]:grid-cols-3 sm:w-auto">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`cursor-pointer rounded-xl px-5 py-2 text-sm font-medium transition-all duration-200 ${
+              className={`cursor-pointer rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200 sm:px-5 ${
                 activeTab === tab.id
                   ? "bg-teal-400/10 text-teal-400"
                   : "text-gray-400 hover:bg-white/5 hover:text-white"
@@ -265,8 +266,8 @@ const ResumeScreen = () => {
           ))}
         </div>
       </div>
-      <div className="relative z-10 mt-14 pl-0">
-        <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/10" />
+      <div className="relative z-10 mt-8 pl-0 sm:mt-14">
+        <div className="absolute left-3 top-0 h-full w-px -translate-x-1/2 bg-white/10 md:left-1/2" />
 
         <div className="space-y-10">
           {data[activeTab].map((item, index) => (

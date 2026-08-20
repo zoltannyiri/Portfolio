@@ -65,18 +65,18 @@ const ProjectsScreen = () => {
   }
 
   return (
-    <div className="relative min-h-screen pt-24 md:pt-40">
+    <div className="relative min-h-screen pb-12 pt-24 sm:pt-32 lg:pt-40">
       <AnimatedBackground />
-      <div className="flex flex-col items-center justify-center *:mx-auto mx-auto max-w-7xl text-center">
-        <div className=" text-teal-400 text-6xl font-bold">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 text-center *:mx-auto sm:px-6">
+        <div className="text-4xl font-bold text-teal-400 sm:text-5xl lg:text-6xl">
           Projektjeim
         </div>
 
-        <div className="text-gray-400 text-2xl font-bold mt-6">
+        <div className="mt-4 text-lg font-bold leading-relaxed text-gray-400 sm:mt-6 sm:text-2xl">
           Innovatív megoldásaim megrendelésre vagy egyéni használatra
         </div>
       </div>
-      <div className="mx-auto mt-10 grid max-w-7xl grid-cols-1 gap-6 px-6 md:grid-cols-2">
+      <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-6 px-4 sm:mt-10 sm:px-6 lg:grid-cols-2">
         {projects.map((project, index) => (
           <ScrollReveal
             key={project.title}
@@ -90,11 +90,11 @@ const ProjectsScreen = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className=" h-[260px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] "
+                className="aspect-video h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] sm:h-[260px]"
               />
             </div>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <h2 className="text-2xl font-bold text-white">
                 {project.title}
               </h2>
@@ -146,7 +146,7 @@ const ProjectsScreen = () => {
                 )}
               </div>
 
-              <div className="mt-6 flex gap-4">
+              <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
                 {project.link ? (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer rounded-lg bg-teal-400 px-4 py-2 font-semibold text-[#071014] transition hover:bg-teal-300">
                   Megtekintés

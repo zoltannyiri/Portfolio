@@ -9,13 +9,13 @@ import ScrollReveal from "../../components/ScrollReveal"
 
 const AboutScreen = () => {
   return (
-    <div className="relative min-h-screen pt-24 md:pt-50">
+    <div className="relative min-h-screen px-4 pb-12 pt-24 sm:px-6 sm:pt-32 lg:pt-40">
       <AnimatedBackground />
        <div>
-          <div className="mx-auto grid md:grid-cols-2 grid-cols-1 gap-10 items-center justify-center max-w-7xl">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 items-center justify-center gap-10 lg:grid-cols-2">
             <div className="grid-cols-1">
               <ScrollReveal direction="left">
-              <div className="text-white text-base space-y-5 tracking-widest leading-loose">
+              <div className="space-y-5 text-sm leading-7 tracking-wide text-white sm:text-base sm:leading-loose sm:tracking-widest">
                 Üdvözöllek! Nyiri Zoltán vagyok, webfejlesztő és mobil alkalmazás fejlesztő. Szenvedélyem a technológia és az innováció, 
                 és mindig arra törekszem, hogy a legjobb megoldásokat nyújtsam ügyfeleimnek. <b></b>
                 Tanulmányaim többek között a győri Jedlik Ányos Szakgimnáziumban töltöttem, ahol CAD-CAM programozó szakképesítést szereztem, 
@@ -31,8 +31,8 @@ const AboutScreen = () => {
                 Üdvözöllek!
               </div> */}
               <ScrollReveal direction="right">
-              <div className="border rounded-2xl border-teal-400/20 p-4 min-w-full py-7">
-                <div className="flex  gap-4">
+              <div className="min-w-0 rounded-2xl border border-teal-400/20 p-4 py-6 sm:py-7">
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-teal-400/10">
                     <LuGraduationCap className="text-2xl text-teal-400" />
                   </div>
@@ -46,7 +46,7 @@ const AboutScreen = () => {
                       Széchenyi István Egyetem
                     </span>
 
-                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                    <div className="mt-2 flex flex-col gap-2 text-sm text-gray-400 sm:flex-row sm:flex-wrap sm:gap-4">
                       <div className="flex items-center">
                         <CiCalendar className="mr-2" />
                         2022. szeptember - 2026. január

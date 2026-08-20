@@ -27,8 +27,8 @@ const ScrollReveal = ({ children, direction = "up", delay = 0, className = "",})
   const hiddenClasses = {
     up: "translate-y-10",
     down: "-translate-y-10",
-    left: "-translate-x-10",
-    right: "translate-x-10",
+    left: "translate-y-8 sm:translate-y-0 sm:-translate-x-10",
+    right: "translate-y-8 sm:translate-y-0 sm:translate-x-10",
   }
 
   return (

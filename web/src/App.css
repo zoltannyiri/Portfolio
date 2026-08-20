@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
 
 @keyframes backgroundMove {
   0% {
@@ -19,8 +19,32 @@
   animation: backgroundMove 18s ease-in-out infinite;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
 body {
   font-family: "Sora", sans-serif;
+  min-width: 320px;
+}
+
+html {
+  background: #080d14;
+  scroll-behavior: smooth;
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .stars {

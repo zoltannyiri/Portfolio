@@ -54,7 +54,7 @@ const ContactScreen = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#080d15] pt-24 md:pt-40">
+    <div className="relative min-h-screen overflow-hidden bg-[#080d15] pb-12 pt-24 sm:pt-32 lg:pt-40">
       {/* <AnimatedBackground /> */}
       
       <div className="pointer-events-none absolute inset-0 z-0">
@@ -63,16 +63,16 @@ const ContactScreen = () => {
       </div>
 
       <div className="relative z-10">
-        <div className="flex flex-col items-center justify-center *:mx-auto mx-auto max-w-7xl text-center">
-          <div className=" text-teal-400 text-5xl font-bold">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 text-center *:mx-auto sm:px-6">
+          <div className="text-3xl font-bold leading-tight text-teal-400 sm:text-4xl lg:text-5xl">
             Vedd fel velem a kapcsolatot!
           </div>
 
-          <div className="text-gray-400 text-2xl mt-10 items-center text-center justify-center">
+          <div className="mt-5 items-center justify-center text-center text-base leading-relaxed text-gray-400 sm:mt-8 sm:text-xl lg:text-2xl">
             Ötleteid vannak, melyeket megvalósítanál? <br></br> Vagy szeretnél együtt dolgozni velem? Ne habozz, írj nekem!
           </div>
         </div>
-        <div className="mt-10 mx-auto grid max-w-6xl grid-cols-1 gap-15 px-6 md:grid-cols-2 ">
+        <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-10 px-4 sm:mt-10 sm:px-6 lg:grid-cols-2 lg:gap-15">
           <div className="md:grid-cols-1">
             <div className="text-[#FAF9F6] text-2xl font-bold">
               Dolgozzunk együtt!
@@ -93,7 +93,7 @@ const ContactScreen = () => {
                     Email
                   </span>
 
-                  <span className="text-sm text-gray-400">
+                  <span className="break-all text-sm text-gray-400">
                     zoltan.nyiri02@gmail.com
                   </span>
                 </div>
@@ -154,12 +154,12 @@ const ContactScreen = () => {
               <div className="text-[#FAF9F6] text-sm font-bold mt-5">
                 Üzenet
               </div>
-              <input
-                type="text"
+              <textarea
+                rows="5"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Üzenet"
-                className="mt-2 w-full rounded-lg border border-gray-900 bg-[#070b14] px-4 py-2 text-white placeholder-gray-400 focus:border-teal-400 focus:ring focus:ring-teal-400/20"
+                className="mt-2 w-full resize-y rounded-lg border border-gray-900 bg-[#070b14] px-4 py-3 text-white placeholder-gray-400 focus:border-teal-400 focus:ring focus:ring-teal-400/20"
               />
             </div>
             <button onClick={emailSender}
