@@ -23,7 +23,7 @@ const ProjectsScreen = () => {
 
     {
       title: "SpendFox",
-      description: "Teszt szöveg",
+      description: "Előfizetéskezelő weboldal és mobilalkalmazás, amely segít átláthatóan követni és kezelni a rendszeres kiadásokat és aktív előfizetéseket, lehetőséget adva az egyéni vagy csoportos költségvetések kezelésére.",
       image: spendfox_web_subscriptions,
       link: "https://spendfox.vercel.app/",
       github: "https://github.com/zoltannyiri/SpendFox",
@@ -32,7 +32,7 @@ const ProjectsScreen = () => {
 
     {
       title: "Égre Nyíló",
-      description: "Teszt szöveg",
+      description: "Bemutatkozó weboldal, amely egy vállalkozás szolgáltatásait, munkáit és legfontosabb információit mutatja be letisztult felületen.",
       image: egrenyilo_welcomepage,
       link: "https://egrenyilo.hu/",
       github: "https://github.com/zoltannyiri/Egre_Nyilo",
@@ -41,7 +41,7 @@ const ProjectsScreen = () => {
 
     {
       title: "Loophub",
-      description: "Teszt szöveg",
+      description: "Közösségi platform zenei loopok megosztására és felfedezésére, ahol a felhasználók saját tartalmakat tölthetnek fel és kapcsolatba léphetnek más alkotókkal.",
       image: loophub_loops,
       link: "https://loop-hub.vercel.app/",
       github: "https://github.com/zoltannyiri/LoopHub",
@@ -50,7 +50,7 @@ const ProjectsScreen = () => {
 
     {
       title: "HéCarFest",
-      description: "Teszt szöveg",
+      description: "Egy hirdetési és eseménykezelő weboldal, amely lehetőséget ad a hirdetések publikálására és az események szervezésére.",
       image: hecarfest_welcomepage,
       github: "https://github.com/zoltannyiri/hecarfest.hu_new",
       technologies: ["Angular", "MongoDB", "Node.js", "Express.js", "Tailwind CSS"],
