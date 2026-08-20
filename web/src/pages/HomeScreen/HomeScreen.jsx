@@ -81,6 +81,20 @@ const HomeScreen = () => {
           </div>
         </div> */}
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 text-slate-400 *:mx-auto lg:grid-cols-2 lg:gap-12">
+          <ScrollReveal direction="up" className="lg:hidden">
+            <div className="flex flex-col gap-y-3 text-center font-[Sora] text-lg sm:text-2xl">
+              <div>Üdvözöllek, a nevem</div>
+
+              <div className="break-words text-4xl font-bold text-teal-400 sm:text-6xl">
+                Nyiri Zoltán
+              </div>
+
+              <div className="min-h-[40px] text-2xl font-bold sm:min-h-[52px] sm:text-4xl">
+                {displayedText}
+              </div>
+            </div>
+          </ScrollReveal>
+
           <ScrollReveal direction="left">
           <div className="relative flex items-center justify-center">
             <div className="absolute -bottom-4 -right-2 h-48 w-48 rounded-full bg-teal-400/10 blur-3xl sm:-bottom-8 sm:-right-8 sm:h-72 sm:w-72" />
@@ -90,7 +104,7 @@ const HomeScreen = () => {
                 <img
                   src={teszt1}
                   alt="Nyiri Zoltán"
-                className="aspect-[4/5] h-auto w-full max-w-[500px] rounded-2xl object-cover object-center lg:h-[560px]"
+                  className="aspect-[4/5] h-auto w-full max-w-[500px] rounded-2xl object-cover object-center lg:h-[560px]"
                 />
               </div>
             </div>
@@ -98,7 +112,7 @@ const HomeScreen = () => {
           </ScrollReveal>
           <ScrollReveal direction="right" delay={150}>
           <div className="flex max-w-2xl flex-col justify-center gap-y-5 text-center font-[Sora]">
-            <div className="flex flex-col gap-y-4 text-lg sm:gap-y-5 sm:text-2xl">
+            <div className="hidden flex-col gap-y-4 text-lg sm:gap-y-5 sm:text-2xl lg:flex">
               <div>
                 Üdvözöllek, a nevem
               </div>
@@ -110,10 +124,10 @@ const HomeScreen = () => {
               <div className="min-h-[40px] text-2xl font-bold sm:min-h-[52px] sm:text-4xl">
                 {displayedText}
               </div>
+            </div>
 
-              <div className="text-base leading-relaxed *:mx-auto *:text-center sm:text-xl">
-                Személyre szabott, egyedi megoldások mindenki számára.
-              </div>
+            <div className="text-base leading-relaxed *:mx-auto *:text-center sm:text-xl">
+              Személyre szabott, egyedi megoldások mindenki számára.
             </div>
             
 
