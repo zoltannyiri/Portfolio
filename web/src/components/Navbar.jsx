@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const links = [
-    { to: "/home", label: "Főoldal" },
+    { to: "/", label: "Főoldal" },
     { to: "/about", label: "Rólam" },
     { to: "/projects", label: "Munkáim" },
     { to: "/resume", label: "Önéletrajz" },
@@ -22,13 +22,13 @@ const Navbar = () => {
   return (
     <header className="fixed inset-x-3 top-3 z-50 max-w-6xl sm:left-1/2 sm:right-auto sm:top-4 sm:w-[calc(100%-2rem)] sm:-translate-x-1/2">
       <nav className="relative flex items-center justify-between rounded-2xl border border-white/10 bg-[#0d141d]/90 px-4 py-3 shadow-lg backdrop-blur-md sm:px-5">
-        <NavLink to="/home" className="cursor-pointer text-lg font-bold tracking-wide text-teal-400 sm:text-xl">
+        <NavLink to="/" className="cursor-pointer text-lg font-bold tracking-wide text-teal-400 sm:text-xl">
           Nyiri Zoltán
         </NavLink>
 
         <div className="hidden items-center gap-1 xl:flex">
           {links.map((link) => (
-            <NavLink key={link.to} to={link.to} className={navClass}>
+            <NavLink key={link.to} to={link.to} end={link.to === "/"} className={navClass}>
               {link.label}
             </NavLink>
           ))}
@@ -50,6 +50,7 @@ const Navbar = () => {
               <NavLink
                 key={link.to}
                 to={link.to}
+                end={link.to === "/"}
                 onClick={() => setIsMenuOpen(false)}
                 className={({ isActive }) => `rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                   isActive
