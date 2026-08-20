@@ -12,6 +12,7 @@ const ContactScreen = () => {
   const [subject, setSubject] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [sendStatus, setSendStatus] = useState(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -20,6 +21,8 @@ const ContactScreen = () => {
 
   const emailSender = async () => {
     setLoading(true)
+    setSendStatus(null)
+
     try {
       const response = await fetch(import.meta.env.VITE_API_URL + '/api/contact', {
         method: 'POST',
@@ -33,10 +36,18 @@ const ContactScreen = () => {
           message,
         }),
       });
+
       const data = await response.json();
       console.log(data);
+
+      if (response.ok) {
+        setSendStatus("success")
+      } else {
+        setSendStatus("error")
+      }
     } catch (error) {
       console.error('Error sending email:', error);
+      setSendStatus("error")
     } finally {
       setLoading(false)
     }
@@ -151,14 +162,27 @@ const ContactScreen = () => {
                 className="mt-2 w-full rounded-lg border border-gray-900 bg-[#070b14] px-4 py-2 text-white placeholder-gray-400 focus:border-teal-400 focus:ring focus:ring-teal-400/20"
               />
             </div>
-            <a onClick={emailSender}
-              className="cursor-pointer min-w-full mt-8 inline-block rounded-lg text-sm font-bold bg-teal-500 px-4 py-3 text-center text-black hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
+            <button onClick={emailSender}
+              disabled={loading}
+              className="cursor-pointer min-w-full mt-8 h-11 inline-flex items-center justify-center rounded-lg text-sm font-bold bg-teal-500 px-4 py-3 text-center text-black hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
             >
-              <FiSend className="inline mr-2" />
-              {loading ? <PropagateLoader /> : "Email küldése"}
-            </a>
+              {loading ? (
+                <PropagateLoader />
+              ) : sendStatus === "success" ? (
+                <div className="text-green-800 font-semibold">
+                  Email sikeresen elküldve!
+                </div>
+              ) : sendStatus === "error" ? (
+                <div className="text-red-400 font-semibold">
+                  Hiba történt az email küldése közben.
+                </div>
+              ) : (
+                <div>
+                  <FiSend className="inline mr-2 text-green-200" /> Email küldése
+                </div>
+              )}
+            </button>
           </div>
-          
         </div>
       </div>
     </div>
