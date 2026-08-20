@@ -1,23 +1,18 @@
 import { useState } from "react"
 
-import AnimatedBackground from "../../components/AnimatedBackground"
 import { PropagateLoader } from "react-spinners";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiSend } from "react-icons/fi";
+import { useLanguage } from "../../i18n/LanguageContext"
 
 const ContactScreen = () => {
+  const { t } = useLanguage()
   const [emailAddress, setEmailAddress] = useState("")
   const [fullName, setFullName] = useState("")
   const [message, setMessage] = useState("")
   const [subject, setSubject] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [loading, setLoading] = useState(false)
   const [sendStatus, setSendStatus] = useState(null)
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-  }
 
   const emailSender = async () => {
     setLoading(true)
@@ -65,17 +60,17 @@ const ContactScreen = () => {
       <div className="relative z-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 text-center *:mx-auto sm:px-6">
           <div className="text-3xl font-bold leading-tight text-teal-400 sm:text-4xl lg:text-5xl">
-            Vedd fel velem a kapcsolatot!
+            {t("Vedd fel velem a kapcsolatot!")}
           </div>
 
           <div className="mt-5 items-center justify-center text-center text-base leading-relaxed text-gray-400 sm:mt-8 sm:text-xl lg:text-2xl">
-            Ötleteid vannak, melyeket megvalósítanál? <br></br> Vagy szeretnél együtt dolgozni velem? Ne habozz, írj nekem!
+            {t("Ötleteid vannak, melyeket megvalósítanál?")} <br /> {t("Vagy szeretnél együtt dolgozni velem? Ne habozz, írj nekem!")}
           </div>
         </div>
         <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-10 px-4 sm:mt-10 sm:px-6 lg:grid-cols-2 lg:gap-15">
           <div className="md:grid-cols-1">
             <div className="text-[#FAF9F6] text-2xl font-bold">
-              Dolgozzunk együtt!
+              {t("Dolgozzunk együtt!")}
             </div>
             {/* <div className="text-gray-400 text-md mt-6">
               asd
@@ -108,12 +103,12 @@ const ContactScreen = () => {
                 </span>
 
                 <span className="text-white font-bold">
-                  Nyitott vagyok új lehetőségekre
+                  {t("Nyitott vagyok új lehetőségekre")}
                 </span>
               </div>
               
               <div className="text-gray-400 text-sm mt-3">
-                Teljes állású vagy projekt alapú együttműködés
+                {t("Teljes állású vagy projekt alapú együttműködés")}
               </div>
             </div>
 
@@ -122,13 +117,13 @@ const ContactScreen = () => {
           <div className="md:grid-cols-2">
             <div className="*:mx-auto mx-auto max-w-2xl">
               <div className="text-[#FAF9F6] text-sm font-bold">
-                Név
+                {t("Név")}
               </div>
               <input
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                placeholder="Teljes neved"
+                placeholder={t("Teljes neved")}
                 className="mt-2 w-full rounded-lg border border-gray-900 bg-[#070b14] px-4 py-2 text-white placeholder-gray-400 focus:border-teal-400 focus:ring focus:ring-teal-400/20"
               />
               <div className="text-[#FAF9F6] text-sm font-bold mt-5">
@@ -138,27 +133,27 @@ const ContactScreen = () => {
                 type="text"
                 value={emailAddress}
                 onChange={(e) => setEmailAddress(e.target.value)}
-                placeholder="email@pelda.com"
+                placeholder={t("email@pelda.com")}
                 className="mt-2 w-full rounded-lg border border-gray-900 bg-[#070b14] px-4 py-2 text-white placeholder-gray-400 focus:border-teal-400 focus:ring focus:ring-teal-400/20"
               />
               <div className="text-[#FAF9F6] text-sm font-bold mt-5">
-                Tárgy
+                {t("Tárgy")}
               </div>
               <input
                 type="text"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                placeholder="Tárgy"
+                placeholder={t("Tárgy")}
                 className="mt-2 w-full rounded-lg border border-gray-900 bg-[#070b14] px-4 py-2 text-white placeholder-gray-400 focus:border-teal-400 focus:ring focus:ring-teal-400/20"
               />
               <div className="text-[#FAF9F6] text-sm font-bold mt-5">
-                Üzenet
+                {t("Üzenet")}
               </div>
               <textarea
                 rows="5"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Üzenet"
+                placeholder={t("Üzenet")}
                 className="mt-2 w-full resize-y rounded-lg border border-gray-900 bg-[#070b14] px-4 py-3 text-white placeholder-gray-400 focus:border-teal-400 focus:ring focus:ring-teal-400/20"
               />
             </div>
@@ -170,15 +165,15 @@ const ContactScreen = () => {
                 <PropagateLoader />
               ) : sendStatus === "success" ? (
                 <div className="text-green-800 font-semibold">
-                  Email sikeresen elküldve!
+                  {t("Email sikeresen elküldve!")}
                 </div>
               ) : sendStatus === "error" ? (
                 <div className="text-red-400 font-semibold">
-                  Hiba történt az email küldése közben.
+                  {t("Hiba történt az email küldése közben.")}
                 </div>
               ) : (
                 <div>
-                  <FiSend className="inline mr-2 text-green-200" /> Email küldése
+                  <FiSend className="inline mr-2 text-green-200" /> {t("Email küldése")}
                 </div>
               )}
             </button>

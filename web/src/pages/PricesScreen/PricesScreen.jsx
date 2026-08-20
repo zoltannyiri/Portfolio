@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 
 import AnimatedBackground from "../../components/AnimatedBackground"
+import { useLanguage } from "../../i18n/LanguageContext"
 
 const ProcessItem = ({ item, index }) => {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -41,7 +43,7 @@ const ProcessItem = ({ item, index }) => {
         </span>
 
         <h3 className="text-xl font-bold text-white">
-          {item.title}
+          {t(item.title)}
         </h3>
       </div>
 
@@ -52,11 +54,11 @@ const ProcessItem = ({ item, index }) => {
       <div className="h-full rounded-2xl border border-white/10 bg-[#0d141d]/70 p-4 backdrop-blur-md transition hover:border-teal-400/30 sm:p-6">
         <div className="flex flex-wrap items-center gap-3">
           <span className="rounded-lg bg-teal-400/10 px-3 py-1 text-sm font-medium text-teal-300">
-            {item.price}
+            {t(item.price)}
           </span>
 
           <span className="text-sm text-gray-500">
-            {item.time}
+            {t(item.time)}
           </span>
         </div>
 
@@ -66,7 +68,7 @@ const ProcessItem = ({ item, index }) => {
           {item.description.map((text, i) => (
             <li key={i} className="flex items-start gap-3">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
-              <span>{text}</span>
+              <span>{t(text)}</span>
             </li>
           ))}
         </ul>
@@ -76,6 +78,7 @@ const ProcessItem = ({ item, index }) => {
 }
 
 const PricesScreen = () => {
+  const { t } = useLanguage()
   const data = {
     munkafolyamat: [
       {
@@ -143,11 +146,11 @@ const PricesScreen = () => {
       <div className="relative z-10 pl-0">
         <div className="flex flex-col items-center justify-center text-center sm:mt-4">
           <div className="text-3xl font-bold text-teal-400 sm:text-4xl">
-            Együttműködés
+            {t("Együttműködés")}
           </div>
           <div className="mt-5 space-y-5 text-base leading-7 text-gray-400 sm:mt-8 sm:text-xl sm:leading-8">
             <div>
-              Lehetőség van <strong className="text-teal-400">óradíj</strong> alapú, vagy <strong className="text-teal-400">projekt szintű</strong> együttműködésre. 
+              {t("Lehetőség van")} <strong className="text-teal-400">{t("óradíj")}</strong> {t("alapú, vagy")} <strong className="text-teal-400">{t("projekt szintű")}</strong> {t("együttműködésre.")}
             </div>
 
             {/* <div className="mt-7">
@@ -160,16 +163,14 @@ const PricesScreen = () => {
 
             <div className="p-4 text-center sm:p-6">
               <div className="text-sm text-gray-500 items-center">
-                Óradíj
+                {t("Óradíj")}
               </div>
 
               <div className="mt-2 break-words text-xl font-bold text-teal-400 sm:text-2xl">
-                6 990 Ft / óra
+                {t("6 990 Ft / óra")}
               </div>
               <p className="mt-2 text-sm leading-6 text-gray-400">
-                Az óradíjas együttműködés megkezdésekor a várható feladat alapján meghatározok egy becsült munkaidőt.
-                A munka indulásához egy előre egyeztetett, például 5 vagy 10 órás kezdő keret előlegként fizetendő.
-                A további munka az elvégzett órák alapján kerül elszámolásra.
+                {t("Az óradíjas együttműködés megkezdésekor a várható feladat alapján meghatározok egy becsült munkaidőt. A munka indulásához egy előre egyeztetett, például 5 vagy 10 órás kezdő keret előlegként fizetendő. A további munka az elvégzett órák alapján kerül elszámolásra.")}
               </p>
             </div>
 
@@ -177,17 +178,15 @@ const PricesScreen = () => {
 
             <div className="border-t border-white/10 p-4 text-center sm:p-6 md:border-t-0">
               <div className="text-sm text-gray-500">
-                Projektdíj
+                {t("Projektdíj")}
               </div>
 
               <div className="mt-2 text-2xl font-bold text-white">
-                Egyedi árajánlat
+                {t("Egyedi árajánlat")}
               </div>
 
               <p className="mt-2 text-sm leading-6 text-gray-400">
-                Amennyiben a projektdíj alapú együttműködést választod,
-                a projekt összetettségétől és specifikációitől függően adok egy árajánlatot, melynek 20%-a a tervezési fázisban előlegként fizetendő.
-                Amennyiben a fejlesztési folyamat alatt egyéb, előre nem egyeztetett funkciókat szeretnél a projektedbe, többletköltséggel járhat.
+                {t("Amennyiben a projektdíj alapú együttműködést választod, a projekt összetettségétől és specifikációitől függően adok egy árajánlatot, melynek 20%-a a tervezési fázisban előlegként fizetendő. Amennyiben a fejlesztési folyamat alatt egyéb, előre nem egyeztetett funkciókat szeretnél a projektedbe, többletköltséggel járhat.")}
               </p>
             </div>
           </div>

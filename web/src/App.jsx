@@ -10,26 +10,27 @@ import ContactScreen from './pages/ContactScreen/ContactScreen'
 import AboutScreen from './pages/AboutScreen/AboutScreen'
 import ResumeScreen from './pages/ResumeScreen/ResumeScreen'
 import PricesScreen from './pages/PricesScreen/PricesScreen'
+import { LanguageProvider } from './i18n/LanguageContext'
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-        <Route path="/about" element={<AboutScreen />} />
-        <Route path="/projects" element={<ProjectsScreen />} />
-        <Route path="/contact" element={<ContactScreen />} />
-        <Route path="/resume" element={<ResumeScreen />} />
-        <Route path="/prices" element={<PricesScreen />} />
-        {/* <Route path="/about" element={<h1>About Page</h1>} />
-        <Route path="/contact" element={<h1>Contact Page</h1>} /> */}
-      </Routes>
-      <Analytics />
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <Navbar />
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/about" element={<AboutScreen />} />
+          <Route path="/projects" element={<ProjectsScreen />} />
+          <Route path="/contact" element={<ContactScreen />} />
+          <Route path="/resume" element={<ResumeScreen />} />
+          <Route path="/prices" element={<PricesScreen />} />
+        </Routes>
+        <Analytics />
+      </Router>
+    </LanguageProvider>
   )
 }
 

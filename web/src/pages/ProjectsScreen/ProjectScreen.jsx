@@ -7,8 +7,10 @@ import egrenyilo_welcomepage from "../../assets/egrenyilo_welcomepage.png"
 import loophub_loops from "../../assets/loophub_loops.png"
 import hecarfest_welcomepage from "../../assets/hecarfest_welcomepage.png"
 import spendfox_web_subscriptions from "../../assets/spendfox_web_subscriptions.png"
+import { useLanguage } from "../../i18n/LanguageContext"
 
 const ProjectsScreen = () => {
+  const { t } = useLanguage()
   const [expandedProjects, setExpandedProjects] = useState({})
 
   const projects = [
@@ -69,11 +71,11 @@ const ProjectsScreen = () => {
       <AnimatedBackground />
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 text-center *:mx-auto sm:px-6">
         <div className="text-4xl font-bold text-teal-400 sm:text-5xl lg:text-6xl">
-          Projektjeim
+          {t("Projektjeim")}
         </div>
 
         <div className="mt-4 text-lg font-bold leading-relaxed text-gray-400 sm:mt-6 sm:text-2xl">
-          Innovatív megoldásaim megrendelésre vagy egyéni használatra
+          {t("Innovatív megoldásaim megrendelésre vagy egyéni használatra")}
         </div>
       </div>
       <div className="mx-auto mt-8 grid max-w-7xl grid-cols-1 gap-6 px-4 sm:mt-10 sm:px-6 lg:grid-cols-2">
@@ -100,7 +102,7 @@ const ProjectsScreen = () => {
               </h2>
 
               <p className="mt-3 leading-7 text-gray-400">
-                {project.description}
+                {t(project.description)}
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
@@ -140,8 +142,8 @@ const ProjectsScreen = () => {
                     "
                   >
                     {expandedProjects[project.title]
-                      ? "Kevesebb"
-                      : `+${project.technologies.length - 4} további`}
+                      ? t("Kevesebb")
+                      : `+${project.technologies.length - 4} ${t("további")}`}
                   </button>
                 )}
               </div>
@@ -149,11 +151,11 @@ const ProjectsScreen = () => {
               <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
                 {project.link ? (
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="cursor-pointer rounded-lg bg-teal-400 px-4 py-2 font-semibold text-[#071014] transition hover:bg-teal-300">
-                  Megtekintés
+                  {t("Megtekintés")}
                 </a>
                 ) : (
                   <span disabled className="cursor-not-allowed rounded-lg bg-teal-600/30 px-4 py-2 font-semibold text-gray-500">
-                    Nem elérhető
+                    {t("Nem elérhető")}
                   </span>
                 )}
                 

@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { FiMenu, FiX } from "react-icons/fi"
+import { useLanguage } from "../i18n/LanguageContext"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { language, t, toggleLanguage } = useLanguage()
 
   const links = [
     { to: "/", label: "Főoldal" },
@@ -29,16 +31,26 @@ const Navbar = () => {
         <div className="hidden items-center gap-1 xl:flex">
           {links.map((link) => (
             <NavLink key={link.to} to={link.to} end={link.to === "/"} className={navClass}>
-              {link.label}
+              {t(link.label)}
             </NavLink>
           ))}
         </div>
 
         <button
           type="button"
+          onClick={toggleLanguage}
+          className="cursor-pointer ml-auto mr-2 flex h-10 min-w-10 items-center justify-center rounded-lg border border-white/10 bg-black/20 px-2 text-xs font-bold tracking-wide text-gray-200 transition hover:border-teal-400/30 hover:text-teal-400 xl:ml-2 xl:mr-0"
+          aria-label={t(language === "hu" ? "Váltás angol nyelvre" : "Váltás magyar nyelvre")}
+          title={t(language === "hu" ? "Váltás angol nyelvre" : "Váltás magyar nyelvre")}
+        >
+          {language === "hu" ? "EN" : "HU"}
+        </button>
+
+        <button
+          type="button"
           onClick={() => setIsMenuOpen((open) => !open)}
           className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-black/20 text-gray-200 transition hover:bg-black/30 hover:text-white focus:outline-none focus:ring-2 focus:ring-teal-400 xl:hidden"
-          aria-label={isMenuOpen ? "Menü bezárása" : "Menü megnyitása"}
+          aria-label={t(isMenuOpen ? "Menü bezárása" : "Menü megnyitása")}
           aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
@@ -58,7 +70,7 @@ const Navbar = () => {
                     : "text-gray-300 hover:bg-white/5 hover:text-white"
                 }`}
               >
-                {link.label}
+                {t(link.label)}
               </NavLink>
             ))}
           </div>

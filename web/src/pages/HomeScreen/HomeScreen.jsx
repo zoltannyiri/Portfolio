@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 
 import AnimatedBackground from "../../components/AnimatedBackground"
 import teszt1 from "../../assets/teszt1.JPG"
 import ScrollReveal from "../../components/ScrollReveal"
+import { useLanguage } from "../../i18n/LanguageContext"
 
 
 const HomeScreen = () => {
+  const { t } = useLanguage()
   const [textIndex, setTextIndex] = useState(0)
   const [displayedText, setDisplayedText] = useState("")
   const [isDeleting, setIsDeleting] = useState(false)
 
-  const texts = [
-    "Webfejlesztő",
-    "Applikáció fejlesztő",
-    // "Magántanár",
-    "Alkalmazás fejlesztő",
-  ]
+  const texts = useMemo(() => [
+    t("Webfejlesztő"),
+    t("Applikáció fejlesztő"),
+    t("Alkalmazás fejlesztő"),
+  ], [t])
 
   useEffect(() => {
     const currentText = texts[textIndex]
@@ -50,7 +51,7 @@ const HomeScreen = () => {
     }, isDeleting ? 40 : 80)
 
     return () => clearTimeout(timeout)
-  }, [displayedText, isDeleting, textIndex])
+  }, [displayedText, isDeleting, textIndex, texts])
 
 
   return (
@@ -83,7 +84,7 @@ const HomeScreen = () => {
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 text-slate-400 *:mx-auto lg:grid-cols-2 lg:gap-12">
           <ScrollReveal direction="up" className="lg:hidden">
             <div className="flex flex-col gap-y-3 text-center font-[Sora] text-lg sm:text-2xl">
-              <div>Üdvözöllek, a nevem</div>
+              <div>{t("Üdvözöllek, a nevem")}</div>
 
               <div className="break-words text-4xl font-bold text-teal-400 sm:text-6xl">
                 Nyiri Zoltán
@@ -114,7 +115,7 @@ const HomeScreen = () => {
           <div className="flex max-w-2xl flex-col justify-center gap-y-5 text-center font-[Sora]">
             <div className="hidden flex-col gap-y-4 text-lg sm:gap-y-5 sm:text-2xl lg:flex">
               <div>
-                Üdvözöllek, a nevem
+                {t("Üdvözöllek, a nevem")}
               </div>
 
               <div className="break-words text-4xl font-bold text-teal-400 sm:text-6xl lg:text-7xl">
@@ -127,17 +128,17 @@ const HomeScreen = () => {
             </div>
 
             <div className="text-base leading-relaxed *:mx-auto *:text-center sm:text-xl">
-              Személyre szabott, egyedi megoldások mindenki számára.
+              {t("Személyre szabott, egyedi megoldások mindenki számára.")}
             </div>
             
 
                   
             <div className="flex flex-col items-stretch justify-center gap-3 px-2 py-2 text-base sm:flex-row sm:items-center sm:gap-5 sm:px-6 sm:py-4 sm:text-xl">
               <button onClick={() => window.location.href = '/projects'} className="cursor-pointer rounded-xl bg-teal-400 px-6 py-3 font-semibold text-[#0d141d] transition-all duration-200 hover:scale-105 hover:bg-teal-300 sm:mt-6">
-                Munkáim
+                {t("Munkáim")}
               </button>
               <button onClick={() => window.location.href = '/contact'} className="cursor-pointer rounded-xl border border-gray-800 bg-[#070b14] px-6 py-3 font-semibold text-[#e9edf3] transition-all duration-200 hover:scale-105 hover:bg-gray-800 sm:mt-6">
-                Kapcsolatfelvétel
+                {t("Kapcsolatfelvétel")}
               </button>
             </div>
           </div>
