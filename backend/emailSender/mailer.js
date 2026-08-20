@@ -12,16 +12,18 @@ const getTransporter = async () => {
     return transporter;
   }
 
-  const ipv4Addresses = await dns.resolve4(process.env.SMTP_HOST);
-
-  if (!ipv4Addresses.length) {
-    throw new Error('Nem sikerült IPv4 címet találni az SMTP szerverhez.');
-  }
+  const { address } = await dns.lookup(process.env.SMTP_HOST, {
+    family: 4
+  });
 
   transporter = nodemailer.createTransport({
-    host: ipv4Addresses[0],
+    host: address,
     port: smtpPort,
     secure: smtpSecure,
+
+    connectionTimeout: 15000,
+    greetingTimeout: 15000,
+    socketTimeout: 30000,
 
     tls: {
       servername: process.env.SMTP_HOST
@@ -46,9 +48,7 @@ const sendMail = async ({ to, subject, html, text, replyTo, from }) => {
     !process.env.SMTP_USER ||
     !process.env.SMTP_PASS
   ) {
-    throw new Error(
-      'SMTP nincs beállítva.'
-    );
+    throw new Error('SMTP nincs beállítva.');
   }
 
   const mailTransporter = await getTransporter();

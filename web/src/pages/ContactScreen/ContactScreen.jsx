@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 import AnimatedBackground from "../../components/AnimatedBackground"
+import { PropagateLoader } from "react-spinners";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiSend } from "react-icons/fi";
 
@@ -10,6 +11,7 @@ const ContactScreen = () => {
   const [message, setMessage] = useState("")
   const [subject, setSubject] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -17,6 +19,7 @@ const ContactScreen = () => {
   }
 
   const emailSender = async () => {
+    setLoading(true)
     try {
       const response = await fetch(import.meta.env.VITE_API_URL + '/api/contact', {
         method: 'POST',
@@ -34,6 +37,8 @@ const ContactScreen = () => {
       console.log(data);
     } catch (error) {
       console.error('Error sending email:', error);
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -150,7 +155,7 @@ const ContactScreen = () => {
               className="cursor-pointer min-w-full mt-8 inline-block rounded-lg text-sm font-bold bg-teal-500 px-4 py-3 text-center text-black hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2"
             >
               <FiSend className="inline mr-2" />
-              Email küldése
+              {loading ? <PropagateLoader /> : "Email küldése"}
             </a>
           </div>
           
