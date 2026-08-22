@@ -129,7 +129,7 @@ const PricesScreen = () => {
       },
       {
         title: "Támogatás és karbantartás",
-        price: "[OPCIONÁLIS] A projekt árának 10%-a / hónap VAGY a projekt árának 90%-a / év",
+        price: "[OPCIONÁLIS] Egyedi árajánlat alapján",
         time: "Folyamatos",
         description: [
           "A projekt támogatása és karbantartása, beleértve a hibajavításokat és a további kiegészítő fejlesztéseket.",
