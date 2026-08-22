@@ -16,7 +16,7 @@ const ProjectsScreen = () => {
   const projects = [
     {
       title: "Túrázz velünk",
-      description: `Egy interaktív, túraútvonalakat listázó weboldal, ahol a felhasználók különböző típusú túrákra jelentkezhetnek, fizetést bonyolíthatnak le,
+      description: `Egy fejlesztés alatt álló interaktív, túraútvonalakat listázó weboldal, ahol a felhasználók különböző típusú túrákra jelentkezhetnek, fizetést bonyolíthatnak le,
         cseveghetnek egymással és megoszthatják saját tapasztalataikat.`,
       image: turazzvelunk_welcomepage,
       link: "https://turazzvelunk.vercel.app/",
