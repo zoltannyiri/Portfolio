@@ -1,14 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const http = require('http');
-const path = require('path');
 
 const contactRoutes = require('./routes/ContactRoutes');
 
 const app = express();
+app.set('trust proxy', 1)
 app.use(cors())
-app.use(express.json())
+app.use(express.json({ limit: '20kb' }))
 
 
 

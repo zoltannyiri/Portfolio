@@ -84,10 +84,11 @@ const ProjectsScreen = () => {
             key={project.title}
             direction="up"
             delay={index * 100}
+            className="h-full"
           >
           <div
             key={project.title}
-            className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0d141d]/70 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-[0_15px_50px_rgba(45,212,191,0.10)]">
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0d141d]/70 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-teal-400/40 hover:shadow-[0_15px_50px_rgba(45,212,191,0.10)]">
             <div className="overflow-hidden">
               <img
                 src={project.image}
@@ -96,7 +97,7 @@ const ProjectsScreen = () => {
               />
             </div>
 
-            <div className="p-4 sm:p-6">
+            <div className="flex flex-1 flex-col p-4 sm:p-6">
               <h2 className="text-2xl font-bold text-white">
                 {project.title}
               </h2>
@@ -105,7 +106,7 @@ const ProjectsScreen = () => {
                 {t(project.description)}
               </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-auto flex flex-wrap gap-2 pt-5">
                 {(expandedProjects[project.title]
                   ? project.technologies
                   : project.technologies.slice(0, 4)

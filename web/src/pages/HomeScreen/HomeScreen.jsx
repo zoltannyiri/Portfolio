@@ -128,7 +128,7 @@ const HomeScreen = () => {
             </div>
 
             <div className="text-base leading-relaxed *:mx-auto *:text-center sm:text-xl">
-              {t("Személyre szabott, egyedi megoldások mindenki számára.")}
+              {t("Modern weboldalakat és mobilalkalmazásokat készítek vállalkozásoknak az ötlettől a működő termékig.")}
             </div>
             
 
