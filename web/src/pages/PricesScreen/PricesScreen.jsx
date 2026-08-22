@@ -186,7 +186,7 @@ const PricesScreen = () => {
               </div>
 
               <p className="mt-2 text-sm leading-6 text-gray-400">
-                {t("Amennyiben a projektdíj alapú együttműködést választod, a projekt összetettségétől és specifikációitől függően adok egy árajánlatot, melynek 20%-a a tervezési fázisban előlegként fizetendő. Amennyiben a fejlesztési folyamat alatt egyéb, előre nem egyeztetett funkciókat szeretnél a projektedbe, többletköltséggel járhat.")}
+                {t("Amennyiben a projektdíj alapú együttműködést választod, a projekt összetettségétől és specifikációitől függően adok egy árajánlatot, melynek 20%-a a tervezési fázisban előlegként fizetendő.")}
               </p>
             </div>
           </div>

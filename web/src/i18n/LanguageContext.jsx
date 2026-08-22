@@ -103,7 +103,7 @@ const englishTranslations = {
   "Az óradíjas együttműködés megkezdésekor a várható feladat alapján meghatározok egy becsült munkaidőt. A munka indulásához egy előre egyeztetett, például 5 vagy 10 órás kezdő keret előlegként fizetendő. A további munka az elvégzett órák alapján kerül elszámolásra.": "At the start of an hourly engagement, I estimate the required working time based on the task. An agreed initial block, such as 5 or 10 hours, is paid in advance. Further work is billed according to the hours completed.",
   "Projektdíj": "Project fee",
   "Egyedi árajánlat": "Custom quote",
-  "Amennyiben a projektdíj alapú együttműködést választod, a projekt összetettségétől és specifikációitől függően adok egy árajánlatot, melynek 20%-a a tervezési fázisban előlegként fizetendő. Amennyiben a fejlesztési folyamat alatt egyéb, előre nem egyeztetett funkciókat szeretnél a projektedbe, többletköltséggel járhat.": "If you choose project-based collaboration, I provide a quote based on the project's complexity and specifications. Twenty percent is payable in advance during the planning phase. Features requested during development that were not agreed upon beforehand may incur additional costs.",
+  "Amennyiben a projektdíj alapú együttműködést választod, a projekt összetettségétől és specifikációitől függően adok egy árajánlatot, melynek 20%-a a tervezési fázisban előlegként fizetendő.": "If you choose project-based collaboration, I provide a quote based on the project's complexity and specifications. Twenty percent is payable in advance during the planning phase.",
   "Konzultáció": "Consultation",
   "Ingyenes": "Free",
   "30 perc - 60 perc": "30-60 minutes",
