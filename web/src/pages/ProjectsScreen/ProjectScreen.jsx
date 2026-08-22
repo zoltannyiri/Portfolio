@@ -16,7 +16,8 @@ const ProjectsScreen = () => {
   const projects = [
     {
       title: "Túrázz velünk",
-      description: "Egy túraútvonalakat bemutató weboldal, ahol a felhasználók felfedezhetik a legszebb túraútvonalakat, és megoszthatják saját tapasztalataikat.",
+      description: `Egy interaktív, túraútvonalakat listázó weboldal, ahol a felhasználók különböző típusú túrákra jelentkezhetnek, fizetést bonyolíthatnak le,
+        cseveghetnek egymással és megoszthatják saját tapasztalataikat.`,
       image: turazzvelunk_welcomepage,
       link: "https://turazzvelunk.vercel.app/",
       github: "https://github.com/zoltannyiri/turazzvelunk",
@@ -52,7 +53,8 @@ const ProjectsScreen = () => {
 
     {
       title: "HéCarFest",
-      description: "Egy hirdetési és eseménykezelő weboldal, amely lehetőséget ad a hirdetések publikálására és az események szervezésére.",
+      description: `Magyarország egyik leghíresebb autós fesztiváljának bemutatkozó weboldala, amely a rendezvény részleteit, programjait 
+        és az élőben történő szavazási funkcióját tartalmazza.`,
       image: hecarfest_welcomepage,
       github: "https://github.com/zoltannyiri/hecarfest.hu_new",
       technologies: ["Angular", "MongoDB", "Node.js", "Express.js", "Tailwind CSS"],
