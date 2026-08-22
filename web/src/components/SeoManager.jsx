@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom"
 
 import { useLanguage } from "../i18n/LanguageContext"
 
-const SITE_URL = "https://nyirizoltan.vercel.app"
+const SITE_URL = "https://zoltannyiri.hu"
 
 const pageMeta = {
   hu: {
