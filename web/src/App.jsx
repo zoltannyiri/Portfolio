@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
@@ -31,6 +32,7 @@ function App() {
           <Route path="/prices" element={<PricesScreen />} />
         </Routes>
         <Analytics />
+        <SpeedInsights />
       </Router>
     </LanguageProvider>
   )
