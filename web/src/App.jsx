@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react"
 
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+import SeoManager from './components/SeoManager'
 import HomeScreen from './pages/HomeScreen/HomeScreen'
 import ProjectsScreen from './pages/ProjectsScreen/ProjectScreen'
 import ContactScreen from './pages/ContactScreen/ContactScreen'
@@ -16,6 +17,7 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
+        <SeoManager />
         <Navbar />
         <Sidebar />
         <Routes>
