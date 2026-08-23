@@ -188,7 +188,7 @@ const ResumeScreen = () => {
       {
         title: "Freelance - Fejlesztő",
         // company: "Trackie.io",
-        period: "2023 - 2026",
+        period: "2022 - 2026",
         description: [
           "Webes felületek frontend és backend fejlesztése React és Angular keretrendszerekkel.",
           "Mobil alkalmazások fejlesztése React Native keretrendszerrel.",
