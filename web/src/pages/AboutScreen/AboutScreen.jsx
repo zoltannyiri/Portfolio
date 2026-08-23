@@ -40,7 +40,7 @@ const AboutScreen = () => {
                     </span>
 
                     <span className=" text-teal-400">
-                      Széchenyi István Egyetem
+                      {t("Széchenyi István Egyetem")}
                     </span>
 
                     <div className="mt-2 flex flex-col gap-2 text-sm text-gray-400 sm:flex-row sm:flex-wrap sm:gap-4">
