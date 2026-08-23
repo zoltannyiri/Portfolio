@@ -57,7 +57,7 @@ const AboutScreen = () => {
                     <button className="cursor-pointer self-start mt-4 rounded-lg bg-teal-400 px-4 py-2 text-base text-black hover:bg-teal-500">
                       <a href={mernokinfo_szakdolgozat} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                         <IoOpenOutline />
-                        {t("Önéletrajz letöltése")}
+                        {t("Szakdolgozat letöltése")}
                       </a>
                     </button>
                   </div>

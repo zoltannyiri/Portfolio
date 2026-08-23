@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zoltannyiri.hu/sitemap.xml
+Sitemap: https://www.zoltannyiri.hu/sitemap.xml

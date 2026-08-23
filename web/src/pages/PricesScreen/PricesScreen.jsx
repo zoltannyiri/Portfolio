@@ -145,9 +145,9 @@ const PricesScreen = () => {
       <AnimatedBackground />
       <div className="relative z-10 pl-0">
         <div className="flex flex-col items-center justify-center text-center sm:mt-4">
-          <div className="text-3xl font-bold text-teal-400 sm:text-4xl">
+          <h1 className="m-0 text-3xl font-bold text-teal-400 sm:text-4xl">
             {t("Együttműködés")}
-          </div>
+          </h1>
           <div className="mt-5 space-y-5 text-base leading-7 text-gray-400 sm:mt-8 sm:text-xl sm:leading-8">
             <div>
               {t("Lehetőség van")} <strong className="text-teal-400">{t("óradíj")}</strong> {t("alapú, vagy")} <strong className="text-teal-400">{t("projekt szintű")}</strong> {t("együttműködésre.")}

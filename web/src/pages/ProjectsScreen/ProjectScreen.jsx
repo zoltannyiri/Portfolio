@@ -72,9 +72,9 @@ const ProjectsScreen = () => {
     <div className="relative min-h-screen pb-12 pt-24 sm:pt-32 lg:pt-40">
       <AnimatedBackground />
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 text-center *:mx-auto sm:px-6">
-        <div className="text-4xl font-bold text-teal-400 sm:text-5xl lg:text-6xl">
+        <h1 className="m-0 text-4xl font-bold text-teal-400 sm:text-5xl lg:text-6xl">
           {t("Projektjeim")}
-        </div>
+        </h1>
 
         <div className="mt-4 text-lg font-bold leading-relaxed text-gray-400 sm:mt-6 sm:text-2xl">
           {t("Innovatív megoldásaim megrendelésre vagy egyéni használatra")}

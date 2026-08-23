@@ -27,7 +27,7 @@ const englishTranslations = {
   "Mérnökinformatikus": "Computer Science Engineer",
   "2022. szeptember - 2026. január": "September 2022 - January 2026",
   "Győr, Magyarország": "Győr, Hungary",
-  "Önéletrajz letöltése": "Download resume",
+  "Szakdolgozat letöltése": "Download thesis",
 
   "Projektjeim": "My Projects",
   "Innovatív megoldásaim megrendelésre vagy egyéni használatra": "Innovative solutions built for clients or personal use",
