@@ -36,7 +36,8 @@ const ProjectsScreen = () => {
       title: "Égre Nyíló",
       description: "Bemutatkozó weboldal, amely egy vállalkozás szolgáltatásait, munkáit és legfontosabb információit mutatja be letisztult felületen.",
       image: egrenyilo_welcomepage,
-      link: "https://egrenyilo.hu/",
+      // link: "https://egrenyilo.hu/",
+      link: "https://egre-nyilo.vercel.app/",
       github: "https://github.com/zoltannyiri/Egre_Nyilo",
       technologies: ["Angular", "Node.js", "SCSS"],
     },
@@ -54,6 +55,7 @@ const ProjectsScreen = () => {
       title: "HéCarFest",
       description: "Magyarország egyik leghíresebb autós fesztiváljának bemutatkozó weboldala, amely a rendezvény részleteit, programjait és az élőben történő szavazási funkcióját tartalmazza.",
       image: hecarfest_welcomepage,
+      link: "https://hecarfest-hu-new-mauve.vercel.app/",
       github: "https://github.com/zoltannyiri/hecarfest.hu_new",
       technologies: ["Angular", "MongoDB", "Node.js", "Express.js", "Tailwind CSS"],
     }
