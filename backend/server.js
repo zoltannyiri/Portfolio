@@ -13,7 +13,7 @@ app.use(express.json({ limit: '20kb' }))
 
 app.use('/api', contactRoutes)
 
-app.get('/api/health', (res) => {
+app.get('/api/health', (req, res) => {
   res.status(200).json({
     status: 'ok',
     uptime: process.uptime(),
