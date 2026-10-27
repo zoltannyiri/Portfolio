@@ -13,6 +13,13 @@ app.use(express.json({ limit: '20kb' }))
 
 app.use('/api', contactRoutes)
 
+app.get('/api/health', (res) => {
+  res.status(200).json({
+    status: 'ok',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
+});
 
 
 const port = 3000;
